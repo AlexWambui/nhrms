@@ -1,0 +1,639 @@
+/**************************************************************************************
+	admin_login_system
+	admin_side_nav
+	main_content
+		welcome
+		employees
+**************************************************************************************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family:helvetica;
+}
+html{
+	font-size:62.5%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+/*admin_login_system*/
+.login_system,
+.login_form{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+.login_system {
+	height: 100vh;
+	width: 100vw;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url(../images/wood.jpg);
+	background-position: center;
+	background-size: cover;
+    /* border:5px solid green; */
+}
+.login_form {
+	width: 30vw;
+	height:auto;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 2%;
+	border-radius: 16px;
+    /* border:5px solid yellow; */
+}
+.login_app_name {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 32px;
+	color: white;
+}
+.form_login_containers {
+	transition: 0.5s;
+}
+.login_inputs {
+	width: 100%;
+	padding: 10px 4px;
+	margin: 5px 0;
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+	color: white;
+}
+::placeholder {
+	color: #ccc;
+}
+.login_buttons {
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: linear-gradient(to right, #ff105f, orange);
+	border: 0;
+	outline: 0;
+	border-radius: 30px;
+	color: white;
+}
+/*admin_login_system*/
+
+/* admin_side_nav */
+.sidenav {
+	height: 100%;
+	width: 12%;
+	font-size:1.4rem;
+	position:relative;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color:black;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+.sidenav .links,
+.dropdown-btn {
+	width:90%;
+	margin:auto;
+	text-decoration: none;
+	color:white;
+	display: block;
+	border-bottom:1px solid aqua;
+	/* text-transform:uppercase; */
+	padding-top:1.0rem;
+	padding-left:1.0rem;
+	padding-bottom:0.3rem;
+}
+.side_nav .links:first-child{
+	border-top:1px solid aqua;
+}
+.sidenav .links:hover {
+	color: lime;
+	padding-left:10px;
+	text-decoration:none;
+  }
+.sidenav .app-name{
+	font-size:2.3rem;
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	cursor:pointer;
+	text-transform:uppercase;
+}
+.sidenav .app-name span{
+	  color:aqua;
+	  font-size:3rem;
+	  text-decoration:underline;
+	  font-weight:bold;
+}
+
+.sidenav .dropdown-btn{
+	outline:none;
+	border:none;
+	background:transparent;
+	padding-left:0;
+	text-align:left;
+	padding-left:1rem;
+	border-bottom:1px solid aqua;
+}
+.sidenav .dropdown-btn span{
+	margin-right:2px;
+}
+.sidenav .dropdown-btn:hover{
+	color: #f1f1f1;
+}
+.sidenav .dropdown-container {
+	display: none;
+	background-color: #262626;
+	padding-left: 8px;
+  }
+
+
+.sidenav .bottom_nav{
+	position:absolute;
+	bottom:4%;
+	width:100%;
+	padding-left: 1rem;
+}
+.sidenav .bottom_nav a{
+	text-decoration:none;
+	color:white;	
+	display:block;
+}
+.sidenav .bottom_nav a span{
+	padding-right:4px;
+}
+.bottom_nav .icon-user{
+	color:aqua;
+}
+.bottom_nav .icon-power-off{
+	color:tomato;
+}
+.bottom_nav a:hover{
+	color:gold;
+	padding-left:2px;
+}
+/* admin_side_nav */
+
+
+
+/* main_content */
+.main_content{
+	margin-left:12.3%;
+	font-size:1.5rem;
+}
+.main_content header{
+	padding:5px 15px;
+}
+.main_content .search_bar input{
+	font-size:1.5rem;
+	width: 35%;
+}
+.main_content .table_header{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	align-items:center;
+	padding: 1px 5px;
+	/* border:1px solid black; */
+}
+.table_header h1{
+	font-size:1.6rem;
+}
+.table_header button{
+	font-size:1.5rem;
+	padding:1px 8px;
+}
+
+
+/* welcome */
+.statistics{
+	padding-top:2%;
+}
+.welcome section ul{
+	list-style:none;
+	padding:1rem;
+	background:aqua;
+	border-radius:20px;
+}
+.welcome section ul li h1{
+	color:green;
+	text-align:center;
+	margin-bottom:2%;
+}
+.welcome section ul li a{
+	text-decoration:none;
+	color:black;
+}
+/* welcome */
+
+/* employees */
+ .modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	width: 84%; /* Full width */
+	height: 100%; /* Full height */
+	margin-left:14%;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+	padding-top: 5px;
+	font-size:1.5rem;
+  }
+  .pop_form {
+	background-color: #fefefe;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	margin:auto;
+	margin-top:1%;
+	padding:2%;	
+  }
+  /*close button X */
+.pop_form_settings{
+	height:50%;
+	font-size:1.7rem;
+}
+.pop_form_settings .pop_form{
+	width:95%;
+}
+.close {
+	position:fixed;
+	right: 25px;
+	top: 0;
+	color:aqua;
+	font-size: 40px;
+	font-weight: bold;
+  }
+.pop_form label{
+	width:22%;
+	text-align:right;
+	font-size:1.3rem;
+	padding:0.4%;
+	/* border:1px solid black; */
+}
+.pop_form .form-group input,
+.pop_form select,
+.pop_form .custom_radio,
+.custom-file{
+	width:76%;
+	float:right;
+}
+.pop_form .form-group input,
+.pop_form select{
+	font-size:1.3rem;
+}  
+.pop_form .custom_radio_label {
+	/* border:1px solid black; */
+    position: relative;
+    padding-right: 76px;
+    cursor: pointer;
+    /*font-size: 1.9vmin;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+.pop_form .custom_radio_label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+	
+  }
+.pop_form .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+	margin-top:2%;
+	margin-left:1%;
+    background-color: gainsboro;
+    border-radius: 50%;
+  }
+.pop_form .custom_radio_label:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+.pop_form .custom_radio_label input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+.pop_form .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }     
+ .pop_form .custom_radio_label input:checked ~ .checkmark:after {
+    display: block;
+  } 
+.pop_form .custom_radio_label .checkmark:after {
+    top: 5px;
+   left: 5px;
+   width: 5px;
+   height: 5px;
+   border-radius: 50%;
+   background: white;
+}
+select{
+	border:1px solid gainsboro;
+	padding:4px 4px;
+}
+.submit_buttons{
+	display:flex;
+	justify-content: space-evenly;
+}
+.submit_buttons .save_btn,
+.submit_buttons .cancel_btn{
+	border:none;
+	outline:none;
+	padding: 4px 12px;
+	border-radius:6px;
+	color:whitesmoke;
+}
+.submit_buttons .save_btn{
+	background:green;
+}
+.submit_buttons .cancel_btn{
+	background:red;
+}
+/* employees */
+.table_edit_buttons{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+}
+.update_forms{
+	width:50vw;
+	margin-top:5px;
+	border:1px solid black;
+	border-radius:8px;
+	padding:2%;
+}
+.update_forms_employee label{
+	width:25%;
+	/* border:1px solid black; */
+	text-align:right;
+	padding-right:2px;
+	padding-top:2px;
+}
+.update_forms_employee input,
+.update_forms_employee .select{
+	width:74%;
+	float:right;
+	font-size:1.5rem;
+}
+.form-group .custom-file{
+	width:74%;
+}
+.form-group .custom-file label{
+	width:100%;
+}
+
+.update_forms_login{
+	margin-top:10%;
+}
+.update_forms_login h4{
+	text-align:center;
+	/* border:1px solid black; */
+	width:100%;
+	padding:2%;
+	color:darkgreen;
+}
+.update_forms_login .form-group{
+	width:100%;
+}
+.update_forms_login label{
+	width: 25%;
+	/* border:1px solid black; */
+	text-align:right;
+	padding:2px 2px;
+}
+.update_forms_login input{
+	width: 74%;
+	float:right;
+	font-size:1.4rem;
+}
+/* reports */
+.reports .row .col h1{
+	text-align:center;
+	color:darkcyan;
+}
+.reports .row a{
+	display:flex;
+	flex-direction:column;
+	width:40%;
+	margin:auto;
+	margin-bottom: 2px;
+}
+.reports .row a:hover{
+	text-decoration:none;
+}
+.print_buttons{
+	outline:none;
+	border:none;
+	border-radius:4px;
+	background:darkcyan;
+	padding:1%;
+	color:white;
+}
+.print_buttons:hover{
+	opacity: .8;
+}
+.print_page{
+	font-size:1.3rem;
+}
+.print_header{
+	text-align:center;
+	/* display:flex;
+	flex-direction:row;
+	justify-content:space-between; */
+}
+.print_header h1{
+	font-size:1.7rem;
+	letter-spacing: 1px;
+	font-family:'Times New Roman', Times, serif;
+}
+.print_header h2{
+	font-size:1.3rem;
+}
+.print_header h1{
+	text-transform:uppercase;
+	font-weight:bold;
+}
+/* reports */
+
+/* main_content */
+
+
+
+
+/************************************************************
+employees 
+************************************************************/
+/* login_system */
+.employee .submit_login_buttons{
+	display:flex;
+	justify-content:space-evenly;
+}
+.employee .submit_login_buttons button{
+	width:40%;
+}
+.employee .submit_login_buttons a{
+	text-decoration: none;
+	padding:4px 16px;
+}
+.employee .submit_login_buttons a button{
+	width:100%;
+}
+/* login_system */
+.user_image_box{
+	/* border:5px solid green; */
+	display:flex;
+	flex-direction:row;
+   justify-content: center;
+  }
+
+/* feedbacks */
+.feedback_messages{
+	width:50%;
+	margin:auto;
+}
+.message,
+.reply{
+	border: 2px solid #dedede;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	padding: 4px 6px;
+	margin: 4px 0;
+	align-items:center;
+}
+.reply{
+	background:#d1d1d1;
+	margin-left:10%;
+}
+.reply p{
+	float:right;
+}
+
+/* Clear floats */
+.message::after,
+.reply::after{
+	content: "";
+	clear: both;
+	display: table;
+  }
+  /* Style images */
+.message img {
+	float: left;
+	max-width: 60px;
+	width: 100%;
+	margin-right: 20px;
+	border-radius: 50%;
+  }
+  
+  /* Style the right image */
+  .message img.right {
+	float: right;
+	margin-left: 20px;
+	margin-right:0;
+  }
+  
+  /* Style time text */
+  .time-right {
+	float: right;
+	color: #aaa;
+  }
+  
+  /* Style time text */
+  .time-left {
+	float: left;
+	color: #999;
+  }
+  /* Button used to open the chat form - fixed at the bottom of the page */
+  .open-button {
+	background-color: #555;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 23px;
+	right: 28px;
+	width: 280px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
+  }
+  
+  /* Full-width textarea */
+  .form-container textarea {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+	resize: none;
+	min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+	background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+  }/* feedbacks */
+/************************************************************
+employees 
+************************************************************/
+
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 15px;}
+	.app-name{font-size:15px;}
+	.bottom-links{margin-left:0px;}
+  }

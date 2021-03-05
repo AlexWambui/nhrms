@@ -1,0 +1,71 @@
+/**************************************************************************************
+
+    admin_login_system
+
+**************************************************************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+/*admin_login_system*/
+.login_system,
+.login_form{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+.login_system {
+	height: 100vh;
+	width: 100vw;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url(../images/wood.jpg);
+	background-position: center;
+	background-size: cover;
+    /* border:5px solid green; */
+}
+.login_form {
+	width: 30vw;
+	height:auto;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 2%;
+	border-radius: 16px;
+    /* border:5px solid yellow; */
+}
+.login_app_name {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 32px;
+	color: white;
+}
+.form_login_containers {
+	transition: 0.5s;
+}
+.login_inputs {
+	width: 100%;
+	padding: 10px 4px;
+	margin: 5px 0;
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+	color: white;
+}
+::placeholder {
+	color: #ccc;
+}
+.login_buttons {
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: linear-gradient(to right, #ff105f, orange);
+	border: 0;
+	outline: 0;
+	border-radius: 30px;
+	color: white;
+}
+/*admin_login_system*/
